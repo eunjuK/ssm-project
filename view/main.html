@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ssum: main</title>
+	<style type="text/css">
+		.page-number {
+			display: flex;
+			align-items: center;
+			padding: 0 30px;
+			box-sizing: border-box;
+		}
+		.line {
+			width: 66px;
+			border: 1px solid #757575;
+		}
+		.sectionber {
+			padding: 0 30px;
+		}
+		.slide-content {
+			border-top: 1px solid #9e9e9e;
+		}
+		.page-number {
+			margin-top: 33px;
+		}
+	</style>
+</head>
+<body>
+	<header class="header">
+		<div class="logo">
+			<h1 class="readable-hidden">씀 로고(메인화면으로 바로가기)</h1>
+
+			<a href="#">
+				<img src="" alt="씀 로고 - 메인화면으로 가기">씀
+			</a>
+		</div>
+
+		<!-- btn menu -->
+		<button id="btn_open" class="openMask">menu</button>
+
+		<!-- dim effect -->
+		<div id="mask"></div>
+
+		<!--  Menu displayed on the Desktop / Mobile -->
+		<nav class="navigation">
+			<h1 class="readable-hidden">씀 메뉴</h1>
+
+			<section class="menu">
+				<div>
+					<h2 class="readable-hidden">사용자 프로필</h2>
+
+					<a class="profile" href="#">
+						<img class="user-profile" src="" alt="사용자 프로필 사진">
+						<p class="pen-name">궈는주</p>
+					</a>
+				</div>
+
+				<ul class="">
+					<li><a href="#">공개 씀</a></li>
+					<li><a href="#">나의 씀</a></li>
+					<li><a href="#">책갈피</a></li>
+				</ul>
+
+				<!-- 검색 클릭 시, -->
+				<div class="search-bar">
+					<h1 class="readable-hidden">search</h1>
+
+					<form class="" action="" method="post">
+						<fieldset>
+							<label class="" for="search">search</label>
+							<input id="search" type="text">
+						</fieldset>
+						<button class="search" type="submit"><img src="" alt="검색"></button>
+					</form>
+				</div>
+
+				<div class="">
+					<button class="btn-option" type="button">로그아웃</button>
+					<a class="btn-option" href="#">설정</a>
+				</div >
+
+				<div>
+					<h2 class="readable-hidden">SSUM SNS</h2>
+
+					<a class="sns-facebook" href="#"><img src="" alt="페이스북"></a>
+					<a class="sns-twitter" href="#"><img src="" alt="트위터"></a>
+					<a class="sns-instagram" href="#"><img src="" alt="인스타그램"></a>
+
+					<p class="">
+						<span>copyright But project,</span>
+						All right reserved.
+					</p>
+				</div>
+			</div>
+
+			<button id="btn_close" type="button">X</button>
+		</nav>
+
+		<!-- Aside menu, 'diplay:none' on mobile -->
+		<aside class="aside">
+			<section class="search-date">
+				<h2 class="readable-hidden">날짜 필터 검색</h2>
+
+				<form action="">
+					<label for="">
+						<img src="" alt="date range">
+					</label>
+					<div class="">
+						<input id="" type="text" placeholder="2016.11.28 - 2016.12.22">
+					</div>
+				</form>
+			</section>
+
+			<section class="slide-box">
+				<div class="slide-content">
+					<h1>06</h1>
+					<div class="">
+						<p class="">낮의 주제</p>
+						<a href="#" class="">TT</a>
+					</div>
+					<div class="">
+						<p class="">밤의 주제</p>
+						<a href="#" class="">대여</a>
+					</div>
+				</div>
+				<div class="slide-content">
+					<h1>05</h1>
+					<div class="">
+						<p class="">낮의 주제</p>
+						<a href="#" class="">도깨비</a>
+					</div>
+					<div class="">
+						<p class="">밤의 주제</p>
+						<a href="#" class="">저승사자</a>
+					</div>
+				</div>
+				<div class="slide-content">
+					<h1>04</h1>
+					<div class="">
+						<p class="">낮의 주제</p>
+						<a href="#" class="">사장</a>
+					</div>
+					<div class="">
+						<p class="">밤의 주제</p>
+						<a href="#" class="">부장</a>
+					</div>
+				</div>
+			</section>
+
+			<section class="page-number">
+				<div class="line"></div>
+				<p class="number">1 / 4</p>
+				<div class="line"></div>
+			</section>
+
+			<section>
+				<button class="btn-" type="button">Up</button>
+				<button class="btn-" type="button">Down</button>
+			</section>
+		</aside>
+	</header>
+
+	<main class="main">
+		<section>
+			<h1 class="readable-hidden">Main: Day Topic</h1>
+
+			<p class="">오늘의 주제 (밤)</p>
+			<h2 class="">이끌림</h2>
+
+			<!-- desktop일 때만 보이기. -->
+			<p class="">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum a inventore rem, voluptatem repellendus quam accusantium labore ullam rerum enim.
+			</p>
+
+			<a class="btn-main" href="#">글쓰러 가기</a>
+			<a class="btn-main" href="#">공개씀 보기</a>
+		</section>
+	</main>
+</body>
+</html>
