@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<title>Ssum: main</title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/style/main-style.css">
 	<style type="text/css">
 		.page-number {
 			display: flex;
@@ -26,155 +29,161 @@
 	</style>
 </head>
 <body>
-	<header class="header">
-		<div class="logo">
-			<h1 class="readable-hidden">씀 로고(메인화면으로 바로가기)</h1>
+	<div class="grid-box base-line"></div>
+	<div class="outer container">
+		<header class="header row">
+			<section class="logo">
+				<h1 class="readable-hidden">씀 로고(메인화면으로 바로가기)</h1>
 
-			<a href="#">
-				<img src="" alt="씀 로고 - 메인화면으로 가기">씀
-			</a>
-		</div>
+				<a class="logo-but-white" href="#">
+					벗 <span class="logo-text">Your writing Friend</span>
+				</a>
+			</section>
 
-		<!-- btn menu -->
-		<button id="btn_open" class="openMask">menu</button>
+			<!-- btn menu -->
+			<button id="btn-menu" class="openMask"><img src="../images/icon/ic_menu.svg"></button>
 
-		<!-- dim effect -->
-		<div id="mask"></div>
+			<!-- dim effect -->
+			<div id="mask"></div>
 
-		<!--  Menu displayed on the Desktop / Mobile -->
-		<nav class="navigation">
-			<h1 class="readable-hidden">씀 메뉴</h1>
+			<!--  Menu displayed on the Desktop / Mobile -->
+			<nav class="navigation">
+				<h1 class="readable-hidden">씀 메뉴</h1>
 
-			<section class="menu">
-				<div>
-					<h2 class="readable-hidden">사용자 프로필</h2>
+				<section class="menu">
+					<div class="profile-box">
+						<h2 class="readable-hidden">사용자 프로필</h2>
 
-					<a class="profile" href="#">
-						<img class="user-profile" src="" alt="사용자 프로필 사진">
-						<p class="pen-name">궈는주</p>
-					</a>
-				</div>
+						<a class="profile" href="#">
+							<img class="user-profile" src="" alt="사용자 프로필 사진">
+							<p class="pen-name">궈는주</p>
+						</a>
+					</div>
 
-				<ul class="">
-					<li><a href="#">공개 씀</a></li>
-					<li><a href="#">나의 씀</a></li>
-					<li><a href="#">책갈피</a></li>
-				</ul>
+					<ul class="menu-list">
+						<!-- <li class="list"><a href="#">공개 씀</a></li> -->
+						<li class="list"><a href="#">공개 씀</a></li>
+						<li class="list"><a href="#">나의 씀</a></li>
+						<li class="list"><a href="#">책갈피</a></li>
+					</ul>
 
-				<!-- 검색 클릭 시, -->
-				<div class="search-bar">
-					<h1 class="readable-hidden">search</h1>
+					<!-- 검색 클릭 시, -->
+					<!-- <div class="search-bar">
+						<h1 class="readable-hidden">search</h1>
 
-					<form class="" action="" method="post">
-						<fieldset>
-							<label class="" for="search">search</label>
-							<input id="search" type="text">
-						</fieldset>
-						<button class="search" type="submit"><img src="" alt="검색"></button>
-					</form>
-				</div>
+						<form class="" action="" method="post">
+							<fieldset>
+								<label class="" for="search">search</label>
+								<input id="search" type="text">
+							</fieldset>
+							<button class="search" type="submit"><img src="" alt="검색"></button>
+						</form>
+					</div> -->
 
-				<div class="">
-					<button class="btn-option" type="button">로그아웃</button>
-					<a class="btn-option" href="#">설정</a>
-				</div >
+					<div class="option-box">
+						<button class="btn-option btn-logout" type="button">로그아웃</button>
+						<a class="btn-option btn-setting" href="#">설 정</a>
+					</div >
 
-				<div>
-					<h2 class="readable-hidden">SSUM SNS</h2>
+					<div class="sns-box">
+						<h2 class="readable-hidden">SSUM SNS</h2>
 
-					<a class="sns-facebook" href="#"><img src="" alt="페이스북"></a>
-					<a class="sns-twitter" href="#"><img src="" alt="트위터"></a>
-					<a class="sns-instagram" href="#"><img src="" alt="인스타그램"></a>
-
-					<p class="">
+						<a class="sns-twitter" href="#"><img src="../images/icon/sns_twitter-logo.svg" alt="트위터"></a>
+						<a class="sns-facebook" href="#"><img src="../images/icon/sns_facebook-logo.svg" alt="페이스북"></a>
+						<a class="sns-instagram" href="#"><img src="../images/icon/sns_instagram-logo.svg" alt="인스타그램"></a>
+					</div>
+					<p class="footer">
 						<span>copyright But project,</span>
 						All right reserved.
 					</p>
-				</div>
-			</div>
+				</section>
 
-			<button id="btn_close" type="button">X</button>
-		</nav>
+				<button id="btn-close" type="button">X</button>
+			</nav>
+			
+			<button id="btn-date" class="" type="button">
+				<img src="../images/icon/ic_date_range.svg" alt="date range">
+			</button>
+			<!-- Aside menu, 'diplay:none' on mobile -->
+			<aside class="aside">
+				<section class="search-date">
+					<h2 class="readable-hidden">날짜 필터 검색</h2>
 
-		<!-- Aside menu, 'diplay:none' on mobile -->
-		<aside class="aside">
-			<section class="search-date">
-				<h2 class="readable-hidden">날짜 필터 검색</h2>
+					<form action="">
+						<label for="">
+							<img src="../images/icon/ic_date_range.svg" alt="date range">
+						</label>
+						<div class="">
+							<input id="" type="text" placeholder="2016.11.28 - 2016.12.22">
+						</div>
+					</form>
+				</section>
 
-				<form action="">
-					<label for="">
-						<img src="" alt="date range">
-					</label>
-					<div class="">
-						<input id="" type="text" placeholder="2016.11.28 - 2016.12.22">
+				<section class="slide-box">
+					<div class="slide-content">
+						<h1>06</h1>
+						<div class="">
+							<p class="">낮의 주제</p>
+							<a href="#" class="">TT</a>
+						</div>
+						<div class="">
+							<p class="">밤의 주제</p>
+							<a href="#" class="">대여</a>
+						</div>
 					</div>
-				</form>
-			</section>
+					<div class="slide-content">
+						<h1>05</h1>
+						<div class="">
+							<p class="">낮의 주제</p>
+							<a href="#" class="">도깨비</a>
+						</div>
+						<div class="">
+							<p class="">밤의 주제</p>
+							<a href="#" class="">저승사자</a>
+						</div>
+					</div>
+					<div class="slide-content">
+						<h1>04</h1>
+						<div class="">
+							<p class="">낮의 주제</p>
+							<a href="#" class="">사장</a>
+						</div>
+						<div class="">
+							<p class="">밤의 주제</p>
+							<a href="#" class="">부장</a>
+						</div>
+					</div>
+				</section>
 
-			<section class="slide-box">
-				<div class="slide-content">
-					<h1>06</h1>
-					<div class="">
-						<p class="">낮의 주제</p>
-						<a href="#" class="">TT</a>
-					</div>
-					<div class="">
-						<p class="">밤의 주제</p>
-						<a href="#" class="">대여</a>
-					</div>
-				</div>
-				<div class="slide-content">
-					<h1>05</h1>
-					<div class="">
-						<p class="">낮의 주제</p>
-						<a href="#" class="">도깨비</a>
-					</div>
-					<div class="">
-						<p class="">밤의 주제</p>
-						<a href="#" class="">저승사자</a>
-					</div>
-				</div>
-				<div class="slide-content">
-					<h1>04</h1>
-					<div class="">
-						<p class="">낮의 주제</p>
-						<a href="#" class="">사장</a>
-					</div>
-					<div class="">
-						<p class="">밤의 주제</p>
-						<a href="#" class="">부장</a>
-					</div>
-				</div>
-			</section>
+				<section class="page-number">
+					<div class="line"></div>
+					<p class="number">1 / 4</p>
+					<div class="line"></div>
+				</section>
 
-			<section class="page-number">
-				<div class="line"></div>
-				<p class="number">1 / 4</p>
-				<div class="line"></div>
-			</section>
+				<section>
+					<button class="btn-" type="button">Up</button>
+					<button class="btn-" type="button">Down</button>
+				</section>
+			</aside>
+		</header>
 
+		<main class="main">
 			<section>
-				<button class="btn-" type="button">Up</button>
-				<button class="btn-" type="button">Down</button>
+				<h1 class="readable-hidden">Main: Day Topic</h1>
+
+				<p class="today-topic">오늘의 주제 (밤)</p>
+				<h2 class="topic">탄핵</h2>
+
+				<!-- desktop일 때만 보이기. -->
+				<p class="topic-text">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum a inventore rem, voluptatem repellendus quam accusantium labore ullam rerum enim.
+				</p>
+
+				<a class="btn-main go-to-write" href="#">글쓰러 가기</a>
+				<a class="btn-main go-to-opench" href="#">공개씀 보기</a>
 			</section>
-		</aside>
-	</header>
-
-	<main class="main">
-		<section>
-			<h1 class="readable-hidden">Main: Day Topic</h1>
-
-			<p class="">오늘의 주제 (밤)</p>
-			<h2 class="">이끌림</h2>
-
-			<!-- desktop일 때만 보이기. -->
-			<p class="">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum a inventore rem, voluptatem repellendus quam accusantium labore ullam rerum enim.
-			</p>
-
-			<a class="btn-main" href="#">글쓰러 가기</a>
-			<a class="btn-main" href="#">공개씀 보기</a>
-		</section>
-	</main>
+		</main>
+	</div>
 </body>
 </html>
