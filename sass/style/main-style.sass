@@ -1,6 +1,5 @@
-/* font */
-@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css)
-@import ../_placeholder
+/* import */
+@import "../_placeholder"
 
 
 
@@ -28,15 +27,38 @@ body
 	width: $width
 	height: $height
 
-=setPosition($position, $args ...)
+=setPosition($position, $args)
 	position: $position
 
 	@if $args != null
-		@each $dir in top, left, bottom, right
+		@each $dir in top, left, bottom, right, z-index
 			$i: index($args, $dir)
 
-/*.test
-	+setPosition(relative, top: 0, right: 10px)*/
+			@if $i
+				#{ $dir }: nth($args, $i + 1)
+
+
+// 	flex-flow: direction, wrap
+//	flex-direction: row, row-reverse, column, column-reverse, initial, inherit
+//	flex-wrap: nowrap, wrap, wrap-reverse, initial, inherit
+ 
+=setFlexAlign($display, $args)
+	display: $display
+
+	@if $args != null
+		@each $dir in align-items, justify-content, flex-flow
+			$i: index($args, $dir)
+
+			@if $i
+				#{ $dir }: nth($args, $i + 1)
+
+=setFont($args)
+	@if $args != null
+		@each $dir in family, size, weight
+			$i: index($args, $dir)
+
+			@if $i
+				font-#{ $dir }: nth($args, $i + 1)
 
 /**-------------------------
  * 	common
@@ -46,7 +68,7 @@ body
 .header
 	+setWH(320px, 34px)
 	color: #fff
-	position: relative
+	+setPosition(fixed, top 0 left 0 z-index 999)
 	display: flex
 	align-items: center
 	justify-content: center
@@ -60,7 +82,7 @@ body
 	@extend %a
 	
 	+setWH(18px, 18px)
-	font-size: 14px
+	+setFont(size 14px)
 	color: #fff
 	text-align: center
 	border: 1px solid #fff
@@ -70,8 +92,7 @@ body
 
 [id^="btn-"]
 	+setWH(16px, 16px)
-	position: absolute
-	top: 9px
+	+setPosition(absolute, top 9px)
 
 [id^="btn-"] > img
 	+setWH(16px, 16px)
@@ -93,11 +114,9 @@ body
 
 /* menu */
 .navigation 
-	display: none
+	/*display: none*/
 	+setWH(214px, 568px)
-	position: absolute
-	top: 0
-	left: 0
+	+setPosition(absolute, top 0 left 0)
 	background-color: #51bcd8
 
 .profile-box
@@ -117,9 +136,8 @@ body
 .pen-name
 	+setWH(110px, 20px)
 	float: left
+	+setFont(size 14px weight bold)
 	color: #fff
-	font-size: 14px
-	font-weight: bold
 	margin: 25px 0
 	margin-right: 28px
 
@@ -134,8 +152,7 @@ body
 
 	+setWH(182px, 24px)
 	display: block
-	font-size: 16px
-	font-weight: 500
+	+setFont(size 16px weight 500)
 	text-align: center
 	padding: 12px 16px
 
@@ -143,15 +160,14 @@ body
 	@extend %clearfix
 
 	+setWH(100%, 66px)
-	margin-top: 54px
+	+setPosition(absolute, bottom 113px)
 	border-top: 1px solid #fff
 	border-bottom: 1px solid #fff
 .btn-option
 	@extend %box-sizing
 	+setWH(89px, 36px)
+	+setFont(size 12px weight 500)
 	color: #fff
-	font-size: 12px
-	font-weight: 500
 	text-align: center
 	margin: 15px 0
 	border: 0
@@ -168,6 +184,8 @@ body
 	margin-left: 1px
 	margin-right: 17px
 
+.footer
+	+setPosition(absolute, bottom 26px)
 .sns-box
 	@extend %clearfix
 	margin-top: 24px
@@ -184,9 +202,9 @@ body
 .sns-instagram
 	margin-right: 46px
 
-.footer
+.copyright
 	+setWH(110px, 32px)
-	font-size: 10px
+	+setFont(size 10px)
 	text-align: center
 	line-height: 16px
 	margin: 0 auto
@@ -195,18 +213,14 @@ body
 
 #btn-close
 	+setWH(24px, 24px)
-	position: absolute
-	top: 13px
-	right: 12px
+	+setPosition(absolute, top 13px right 12px)
 
 
 /* aside */
 .aside
 	+setWH(260px, 568px)
 	display: none
-	position: absolute
-	top: 0
-	right: 0
+	+setPosition(absolute, top 0 right 0)
 	background-color: #fff
 
 .search-date
@@ -227,12 +241,14 @@ body
 /* main */
 .main
 	+setWH(320px, 534px)
+	position: relative
+
+.main > section
 
 .today-topic
 	+setWH(85px, 14px)	
 	color: #424242
-	font-size: 12px
-	font-weight: 800
+	+setFont(size 12px weight 800)
 	text-align: center
 	margin: 0 auto
 	margin-top: 90px
@@ -240,7 +256,7 @@ body
 .topic
 	+setWH(229px, 44px)
 	color: #424242
-	font-size: 38px
+	+setFont(size 38px)
 	text-align: center
 	margin: 0 auto
 	margin-top: 20px
@@ -254,9 +270,9 @@ body
 
 	+setWH(128px, 36px)
 	display: block
+	+setPosition(absolute, left 96px right 96px z-index 9)
+	+setFont(size 12px weight 500)
 	color: #616161
-	font-size: 12px
-	font-weight: 500
 	text-align: center
 	padding: 9px 10px
 	margin: 0 auto
@@ -266,9 +282,9 @@ body
 	background-color: #f5f5f5
 	
 .go-to-write
-	margin-top: 241px
+	bottom: 120px
 .go-to-opench
-	margin-top: 8px
+	bottom: 76px
 
 
 
