@@ -20,6 +20,20 @@ body {
   box-sizing: border-box;
 }
 
+.main-outer::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.col-float {
+  float: left;
+}
+
+.col-postion-r {
+  position: relative;
+}
+
 /* main */
 .main {
   position: relative;
@@ -92,8 +106,17 @@ body {
   /* main */
 }
 
+@media only screen and (min-width: 1440px) {
+  body {
+    font-size: 16px;
+  }
+}
+
 @media (min-width: 1440px) {
   /* main */
+  .main {
+    padding-right: 364px;
+  }
 }
 
 /*# sourceMappingURL=../../map/style/main-style.css.map */

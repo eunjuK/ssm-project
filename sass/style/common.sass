@@ -1,6 +1,9 @@
 // import 
 @import "common-init"
+@import "../_vars"
+@import "../_functions"
 @import "common-mixin"
+@import "../_mixins"
 @import "../_placeholder"
 
 
@@ -10,12 +13,11 @@
  /* Fluid */
 /* header */
 .header
-	// +setWH(320px, 34px)
+	+setWH(100%, 34px)
 	+setPosition(fixed, top 0 left 0 z-index 999)
 	+setFont(size 12px)
 
 	min-width: 320px
-	height: 34px
 	color: #fff
 	display: flex
 	align-items: center
@@ -25,6 +27,9 @@
 .logo
 	// +setWH(112px, 18px)
 	+setWH(130px, 18px)
+
+	+respond-to($md-container-width)
+		+setWH(450px, auto)
 
 	display: inline-block
 
@@ -42,6 +47,9 @@
 	border: 1px solid #fff
 .logo-text
 	+setWH(94px,18px)
+
+	+respond-to($md-container-width)
+		display: block
 
 	
 
@@ -211,6 +219,9 @@
 	min-height: 568px
 	background-color: #fff
 
+	+respond-to($md-container-width)
+		+setPosition(absolute, top 0 right 0 z-index 99999)
+
 .search-date
 	+setWH(100%, 42px)
 	+setPosition(absolute, top 0 right 0)
@@ -326,6 +337,9 @@
 
 #aside-btn-close
 	+setPosition(absolute, top 0 left -24px)
+	
+	+respond-to($md-container-width)
+		display: none
 
 
 /**-------------------------
@@ -341,31 +355,34 @@
  /* static */
 @media (min-width: 1024px)
 	/* outer */
-	.outer
-		+setWH(1024px, auto)
-		
-		margin: 0 auto
+	// .outer
+	// 	+setWH(1024px, auto)
 
-	/* header */
-	.header
-		+setWH(1024px, 62px)
 	
 @media (min-width: 1440px)
 	/* outer */
 	.outer
-		+setWH(1440px, auto)
+		// +setWH(1440px, auto)
+		
+			// +setWH(100%, auto)
 
 	/* header */
 	.header
-		+setWH(1440px, auto)
+		// +setWH(1066px, auto)
 
 	.logo
-		+setWH(450px, auto)
-	
-	.logo-but-white
-		+setWH(112px, auto)
+
 
 	.logo-text
-		display: block
 
-	/* main */
+
+	/* aside */
+	.aside
+		// +setWH(260px, 568px)
+		// +setWH(260px, 100vh)
+	
+
+	#aside-btn-close
+
+
+

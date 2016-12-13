@@ -1,5 +1,9 @@
 @import "common-init"
+@import "../_vars"
+@import "../_functions"
 @import "common-mixin"
+@import "../_mixins"
+@import "../_placeholder"
 
 /* main */
 .main
@@ -8,6 +12,9 @@
 
 	min-width: 320px
 	min-height: 534px
+.main-outer
+	&::after
+		@extend %clearfix
 
 .today-topic
 	+setWH(85px, 14px)	
@@ -66,6 +73,14 @@
  /* static */
 @media (min-width: 1024px)
 	/* main */
+body
+	+respond-to($md-container-width)
+		font-size: 16px
 
 @media (min-width: 1440px)
 	/* main */
+	.main
+		padding-right: 364px;
+
+	.btn-main
+
