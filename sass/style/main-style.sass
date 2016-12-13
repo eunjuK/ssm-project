@@ -1,25 +1,28 @@
-@import "common"
+@import "common-init"
+@import "common-mixin"
 
 /* main */
 .main
-	/*+setWH(320px, 534px)*/
+	+setPosition(relative, left -11)
+	// +setWH(320px, 534px)
+
 	min-width: 320px
 	min-height: 534px
-	position: relative
-	left: -11px
 
 .today-topic
 	+setWH(85px, 14px)	
-	color: #424242
 	+setFont(size 12px weight 800)
+
+	color: #424242
 	text-align: center
 	margin: 0 auto
 	margin-top: 90px
 
 .topic
 	+setWH(229px, 44px)
-	color: #424242
 	+setFont(size 38px)
+
+	color: #424242
 	text-align: center
 	margin: 0 auto
 	margin-top: 20px
@@ -30,11 +33,11 @@
 .btn-main
 	@extend %a
 	@extend %box-sizing
-
 	+setWH(128px, 36px)
-	display: block
 	+setPosition(absolute, left 96px right 96px z-index 9)
 	+setFont(size 12px weight 500)
+
+	display: block
 	color: #616161
 	text-align: center
 	padding: 9px 10px
@@ -50,3 +53,19 @@
 	bottom: 76px
 
 
+/**-------------------------
+ * 	Mobile & Tablet
+ ------------------------- */
+
+
+
+
+/**-----------------
+ * 	Desktop
+ ----------------- */
+ /* static */
+@media (min-width: 1024px)
+	/* main */
+
+@media (min-width: 1440px)
+	/* main */
